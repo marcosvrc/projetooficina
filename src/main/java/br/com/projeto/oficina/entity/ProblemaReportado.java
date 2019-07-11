@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -15,8 +16,13 @@ public class ProblemaReportado extends BaseEntity implements Serializable{
 	
 	@Id
 	private Long id;
+	
+	@OneToOne
 	private Veiculo veiculo;
+	
+	@OneToOne
 	private Cliente cliente;
+	
 	private String descricao;
 
 }

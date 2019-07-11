@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -19,9 +21,17 @@ public class Orcamento extends BaseEntity implements Serializable{
 	@Id
 	private Long id;
 	private ZonedDateTime data;
+	
+	@OneToOne
 	private Cliente cliente;
+	
+	@OneToOne
 	private ProblemaReportado problemaRelatado;
+	
+	@OneToOne
 	private Veiculo veiculo;
+	
+	@OneToMany
 	private List<ItemOrcamento> itemsOrcamento;
 	private BigDecimal valorTotal;
 	

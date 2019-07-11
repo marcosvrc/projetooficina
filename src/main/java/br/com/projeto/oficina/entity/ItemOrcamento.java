@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -16,6 +17,8 @@ public class ItemOrcamento implements Serializable {
 	
 	@Id
 	private Long id;
+	
+	@OneToOne
 	private Servico service;
 	private int quantity;
 	private BigDecimal subTotal;

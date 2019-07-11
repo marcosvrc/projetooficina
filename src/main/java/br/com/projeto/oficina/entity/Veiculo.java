@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -19,6 +20,8 @@ public class Veiculo extends BaseEntity implements Serializable{
 	private String modelo;
 	private int anoFabricacao;
 	private String placa;
+	
+	@OneToOne
 	private Cliente proprietario;
 
 }
